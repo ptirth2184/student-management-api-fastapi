@@ -72,7 +72,7 @@ Once the server is running, visit:
 ## Swagger UI Preview
 
 ```markdown
-![Swagger UI](screenshots/swagger-ui.png)
+![Swagger UI](https://raw.githubusercontent.com/ptirth2184/student-management-api-fastapi/main/screenshots/swagger-ui.png)
 ```
 
 ## API Endpoints
