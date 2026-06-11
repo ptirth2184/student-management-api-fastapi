@@ -1,33 +1,42 @@
 # Student Management API
 
-A RESTful Student Management API built with FastAPI as part of my backend engineering learning journey.
+A RESTful Student Management API built with FastAPI to demonstrate CRUD operations, request validation, response modeling, and REST API best practices.
 
 ## Features
 
-- Create Student
-- Get All Students
-- Get Student By ID
-- Update Student
-- Delete Student
-- Search Students By Course
-- Request Validation with Pydantic
-- Response Models
-- Proper HTTP Status Codes
-- Exception Handling
+### Student Operations
+
+* Create Student
+* Get All Students
+* Get Student By ID
+* Update Student
+* Delete Student
+* Search Students By Course
+
+### API Features
+
+* Request Validation with Pydantic
+* Response Models
+* Path & Query Parameters
+* Proper HTTP Status Codes
+* Exception Handling
+* Interactive API Documentation (Swagger UI & ReDoc)
 
 ## Tech Stack
 
-- Python
-- FastAPI
-- Pydantic
-- Uvicorn
+* Python
+* FastAPI
+* Pydantic
+* Uvicorn
 
 ## Project Structure
 
 ```text
-main.py
-requirements.txt
-README.md
+student-management-api-fastapi/
+│
+├── main.py
+├── requirements.txt
+└── README.md
 ```
 
 ## Installation
@@ -35,7 +44,7 @@ README.md
 Clone the repository:
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/ptirth2184/student-management-api-fastapi.git
 cd student-management-api-fastapi
 ```
 
@@ -53,34 +62,35 @@ uvicorn main:app --reload
 
 ## API Documentation
 
-FastAPI automatically generates interactive documentation:
+FastAPI automatically generates interactive API documentation.
 
-Swagger UI:
+Once the server is running, visit:
 
-```text
-http://127.0.0.1:8000/docs
-```
+* Swagger UI: http://127.0.0.1:8000/docs
+* ReDoc: http://127.0.0.1:8000/redoc
 
-ReDoc:
+## Swagger UI Preview
 
-```text
-http://127.0.0.1:8000/redoc
+```markdown
+![Swagger UI](screenshots/swagger-ui.png)
 ```
 
 ## API Endpoints
 
-| Method | Endpoint | Description |
-|----------|----------|----------|
-| POST | /students | Create a student |
-| GET | /students | Get all students |
-| GET | /students/{id} | Get a student by ID |
-| PUT | /students/{id} | Update a student |
-| DELETE | /students/{id} | Delete a student |
-| GET | /students/search | Search students by course |
+| Method | Endpoint                     | Description               |
+| ------ | ---------------------------- | ------------------------- |
+| POST   | `/students`                  | Create a student          |
+| GET    | `/students`                  | Retrieve all students     |
+| GET    | `/students/{student_id}`     | Retrieve a student by ID  |
+| PUT    | `/students/{student_id}`     | Update a student          |
+| DELETE | `/students/{student_id}`     | Delete a student          |
+| GET    | `/students/search?course=AI` | Search students by course |
 
 ## Sample Request
 
-POST /students
+### Create Student
+
+**POST** `/students`
 
 ```json
 {
@@ -91,21 +101,52 @@ POST /students
 }
 ```
 
+## Sample Response
+
+```json
+{
+  "id": 1,
+  "name": "Tirth Patel",
+  "age": 21,
+  "course": "AI & DS",
+  "email": "tirth@example.com"
+}
+```
+
+## Sample Error Response
+
+```json
+{
+  "detail": "Student not found"
+}
+```
+
 ## Future Improvements
 
-- Database Integration with SQLAlchemy
-- Authentication & Authorization
-- Pagination
-- Docker Support
-- Unit Testing
-- Deployment
+* Database Integration with SQLAlchemy
+* PostgreSQL Integration
+* JWT Authentication
+* Docker Containerization
+* Pagination
+* Unit & Integration Testing
+* Cloud Deployment
+* Role-Based Access Control (RBAC)
 
 ## Learning Outcomes
 
 This project helped me understand:
 
-- FastAPI fundamentals
-- Request and response models
-- CRUD API design
-- Data validation with Pydantic
-- REST API best practices
+* FastAPI fundamentals
+* CRUD API design
+* Request and Response Models
+* Data Validation with Pydantic
+* Path and Query Parameters
+* HTTP Status Codes
+* Exception Handling
+* REST API Best Practices
+
+## Author
+
+**Tirth Patel**
+
+Aspiring AI/ML Engineer and Backend Developer, currently learning FastAPI and building production-ready backend systems.
