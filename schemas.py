@@ -1,16 +1,12 @@
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, Field, ConfigDict
 
 class StudentCreate(BaseModel):
-    name: str
-    age: int
-    course: str
-    email: str
+    name: str = Field(..., min_length=3)
+    age: int = Field(..., ge=18)
+    course: str = Field(..., min_length=2)
+    email: str = Field(...)
 
 class StudentResponse(StudentCreate):
     id: int
-    name: str
-    age: int
-    course: str
-    email: str
 
     model_config = ConfigDict(from_attributes=True)
